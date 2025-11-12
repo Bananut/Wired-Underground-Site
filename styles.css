@@ -1,0 +1,269 @@
+* {box-sizing: border-box; margin: 0; padding: 0}
+html,body {height: 100%}
+body {
+	font-family: 'Source Code Pro', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+	color: #000000;
+	background: #F6FBFF;
+}
+
+@font-face {
+    font-family: 'NUKLEAR';
+    src: url('NUKLEAR.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Source Code Pro';
+    src: url('SourceCodePro-Regular.ttf') format('truetype');
+}
+
+/* Apply NUKLEAR font to headings */
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'NUKLEAR', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Layout: fixed-width left sidebar + flexible main */
+.site {
+	min-height: 100vh;
+	display: grid;
+	grid-template-columns: 325px 1fr;
+	background: #ffffff;
+}
+
+.sidebar {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 2rem 1.5rem;
+	position: sticky;
+	top: 0;
+	height: 100vh;
+	align-self: start;
+	background: #000000;
+	color: #ffffff;
+	border-right: 1px solid #000000;
+}
+
+/* Brand at top */
+.brand h1 {
+	font-size: 1.8rem;
+	margin: 0 0 0.25rem 0;
+	letter-spacing: 0.02em;
+	text-transform: lowercase;
+	color: #ffffff;
+}
+.brand .tag {
+	font-size: 0.95rem;
+	margin: 0 0 1rem 0;
+	color: #a9a9a9;
+}
+
+/* Navigation */
+.main-nav ul {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	margin-top: 6px;
+}
+.main-nav li { margin: 0.6rem 0; }
+.main-nav a {
+	font-size: 1.15rem;
+	text-decoration: none;
+	color: #a9a9a9;
+	display: inline-block;
+	padding: 0.25rem 0.5rem;
+}
+.main-nav a:hover {
+	color: #ffffff;
+}
+
+/* Footer area in sidebar (small descriptive block) */
+.sidebar-footer {
+	margin-top: auto;
+	font-size: 12px;
+	color: #444;
+}
+.sidebar-footer h4 {
+	font-size: 12px;
+	margin-bottom: 8px;
+}
+.sidebar-footer .desc {
+	color: #444;
+	line-height: 1.35;
+	margin-bottom: 8px;
+}
+.toggle-thumbs {
+	background: none;
+	border: none;
+	color: #0a66c2;
+	cursor: pointer;
+	padding: 0;
+	font-size: 12px;
+}
+
+/* Main content area */
+.main {
+	/* stack poster and sections vertically so gallery is visible below the poster */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 2rem;
+	gap: 24px;
+}
+
+.about-section{
+	display: flex;
+	align-items: center;
+	gap: 30px;
+	padding: 20px;
+	height: 200px;
+}
+
+.about-section img {
+	  width: 220px;
+}
+
+section {
+	width: 100%;
+	max-width: 900px;
+	padding: 4rem 2rem;
+	border-bottom: 1px solid #ffffff;
+}
+section h2 { 
+	margin-top: 0;
+	color: #2200D5;
+	font-size: 2.5rem;
+}
+
+section p {
+	font-size: 1.1rem;
+	line-height: 1.6;
+}
+
+/* About section list */
+#about ul {
+	font-size: 1.1rem;
+	line-height: 1.6;
+	margin: 1.2rem 0 0 1.5rem;
+	padding-left: 1.5rem;
+}
+#about ul li {
+	margin-bottom: 0.8rem;
+}
+
+/* Simple responsive gallery images (gallery rules are in the page head; these keep layout consistent) */
+.gallery {
+	display: grid;
+	/* larger minimum column so images appear big */
+	grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+	gap: 1rem;
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.gallery a {
+	display: block; 
+}
+
+.gallery img {
+	width: 100%;
+	/* big height for visibility — object-fit preserves crop */
+	height: 480px;
+	object-fit: cover;
+	border-radius: 6px;
+	display: block;
+}
+
+/* Visually-hidden helper (used by the hidden Art heading) */
+.visually-hidden {
+	position: absolute !important;
+	height: 1px; width: 1px;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+	white-space: nowrap;
+	border: 0; padding: 0; margin: -1px;
+}
+
+/* UI animation variables */
+:root {
+	--anim-duration: 600ms;
+	--ease: cubic-bezier(.2,.9,.3,1);
+	--brand-accent: #2200D5; /* blue for Wired Underground logo */
+	--nav-accent: #ffffff;   /* white for other highlighted nav text */
+}
+
+/* Reveal-on-scroll helper */
+.reveal {
+	opacity: 0;
+	transform: translateY(18px) scale(.995);
+	transition: opacity var(--anim-duration) var(--ease), transform var(--anim-duration) var(--ease);
+	will-change: opacity, transform;
+}
+.is-revealed {
+	opacity: 1;
+	transform: none;
+}
+
+/* Nav underline removed — use zoom instead */
+.main-nav a {
+	position: relative;
+	transition: color 240ms var(--ease), transform 240ms var(--ease);
+	transform-origin: center;
+}
+.main-nav a::after { display: none; } /* remove underline pseudo-element */
+
+/* Zoom on hover/focus for nav items (accessible via keyboard too) */
+.main-nav a:hover,
+.main-nav a:focus,
+.main-nav a:active,
+.main-nav li:focus-within > a {
+	transform: scale(1.06);
+	color: var(--nav-accent);
+	text-decoration: none;
+}
+
+/* Wired Underground brand: keep its own hover color (blue) */
+.brand h1:hover,
+.brand h1:focus {
+	transform: translateY(-3px) scale(1.02);
+	color: var(--brand-accent);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+	.main-nav a,
+	.brand h1 { transition: none !important; transform: none !important; }
+}
+
+/* Responsive: stack sidebar above content on narrow screens */
+@media (max-width: 900px) {
+	.site { grid-template-columns: 1fr; }
+	.sidebar { position: static; height: auto; overflow: visible; padding: 12px; background: #150018; border-right: none; border-bottom: 2px solid #2200D5; }
+	.main { padding: 20px; }
+	.sidebar-footer { display: none; } /* hide long text on small screens for this prototype */
+	.main-nav ul { flex-direction: row; gap: 12px; overflow:auto; }
+	.poster { width: 480px; max-width: 100%; }
+	.gallery { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); max-width: 100%; gap: 0.6rem; }
+	.gallery img { height: 180px; }
+}
+
+/* Game dev gallery: one per row, 16:9 aspect ratio */
+.gamedev-gallery {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+.gamedev-gallery a { display: block; }
+.gamedev-gallery img {
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+	border-radius: 6px;
+	display: block;
+}

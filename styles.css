@@ -6,6 +6,112 @@ body {
 	background: #F6FBFF;
 }
 
+		ul {
+			margin: 0;
+			padding-left: 1.2em;
+			list-style-type: disc;
+		}
+		li {
+			margin-bottom: 0.5rem;
+		}
+		
+a {
+	text-decoration: none;
+}
+		/* Gallery buttons */
+		.gallery-item {
+			background: none;
+			border: none;
+			padding: 0;
+			cursor: pointer;
+			transition: transform 200ms ease;
+		}
+		.gallery-item:hover {
+			transform: scale(1.02);
+		}
+		.gallery-item img {
+			display: block;
+		}
+		
+		/* Lightbox styles */
+		.lightbox {
+			display: none;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.95);
+			z-index: 9999;
+			justify-content: center;
+			align-items: center;
+			padding: 20px;
+		}
+		.lightbox.active {
+			display: flex;
+		}
+		#lightbox-img {
+			max-width: 90vw;
+			max-height: 85vh;
+			object-fit: contain;
+			border-radius: 6px;
+		}
+		.lightbox-close {
+			position: absolute;
+			top: 20px;
+			right: 20px;
+			background: none;
+			border: none;
+			color: #ffffff;
+			font-size: 3rem;
+			cursor: pointer;
+			width: 50px;
+			height: 50px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: color 200ms ease;
+		}
+		.lightbox-close:hover {
+			color: #2200D5;
+		}
+		.lightbox-prev, .lightbox-next {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			background: rgba(255, 255, 255, 0.1);
+			border: 2px solid rgba(255, 255, 255, 0.3);
+			color: #ffffff;
+			font-size: 2rem;
+			cursor: pointer;
+			width: 50px;
+			height: 50px;
+			border-radius: 4px;
+			transition: all 200ms ease;
+		}
+		.lightbox-prev:hover, .lightbox-next:hover {
+			background: rgba(255, 255, 255, 0.2);
+			border-color: rgba(255, 255, 255, 0.6);
+			color: #2200D5;
+		}
+		.lightbox-prev {
+			left: 20px;
+		}
+		.lightbox-next {
+			right: 20px;
+		}
+		.lightbox-counter {
+			position: absolute;
+			bottom: 20px;
+			left: 50%;
+			transform: translateX(-50%);
+			color: #ffffff;
+			font-size: 1rem;
+			background: rgba(0, 0, 0, 0.5);
+			padding: 8px 16px;
+			border-radius: 4px;
+		}
+
 @font-face {
     font-family: 'NUKLEAR';
     src: url('NUKLEAR.ttf') format('truetype');
@@ -113,6 +219,7 @@ h1, h2, h3, h4, h5, h6 {
 	gap: 24px;
 }
 
+
 .about-section{
 	display: flex;
 	align-items: center;
@@ -122,7 +229,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .about-section img {
-	  width: 220px;
+	width: 220px;
 }
 
 section {
@@ -153,12 +260,26 @@ section p {
 	margin-bottom: 0.8rem;
 }
 
+.socials-links{
+	position: absolute;
+	bottom:	10px;
+}
+
+.socials-links img{
+	filter: invert(1) brightness(2);
+	gap: 600px;
+	width: 40px;
+	height: auto;
+	display: inline-block;
+	margin-right: 10px;
+}
+
 /* Simple responsive gallery images (gallery rules are in the page head; these keep layout consistent) */
 .gallery {
 	display: grid;
 	/* larger minimum column so images appear big */
 	grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-	gap: 1rem;
+	gap: .4rem;
 	width: 100%;
 	max-width: 1200px;
 	margin: 0 auto;

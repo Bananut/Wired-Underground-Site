@@ -5,23 +5,12 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
 	<title>The Wired Underground</title>
 	<link rel="stylesheet" href="styles.css">
-	<style>
-		/* Minimal CSS to style the list */
-		ul {
-			margin: 0;
-			padding-left: 1.2em;
-			list-style-type: disc;
-		}
-		li {
-			margin-bottom: 0.5rem;
-		}
-	</style>
 </head>
 <body>
 	<div class="site">
 		<aside class="sidebar">
 			<div class="brand">
-				<h1>Wired Underground</h1>
+				<a href="#main" id="Title"><h1>Wired Underground</h1></a>
 				<p class="tag">artist & game developer</p>
 			</div>
 
@@ -30,85 +19,77 @@
 					<li><a href="#about">About</a></li>
 					<li><a href="#art">Art</a></li>
 					<li><a href="#gamedev">Game Dev</a></li>
-					<li><a href="#contact">Contact</a></li>
+					<li><a href="#socials">Socials</a></li>
 				</ul>
 			</nav>
+
+			<div class="socials-links" id="socials-links">
+				<h3>Contacts</h3>
+				<a href="https://www.instagram.com/wired_underground/" target="_blank" rel="noopener"><img src="icons/instagram.png"></a>
+				<a href="https://github.com/Bananut" target="_blank" rel="noopener"><img src="icons/github.png"></a>
+				<a href="mailto:bananutstudios@gmail.com"><img src="icons/mail.png"></a>
+			</div>
 		</aside>
 
-		<main class="main">
+		<main class="main" id="main">
 
 			<section id="about" data-reveal>
 				<h2>About</h2>
 
 					<div class="about-section">
-						<div class="about-text"><p>Welcome to my site! I’m a game developer and artist, and I’ve been making games since 2020. This site was made so i have a central place to actually showcase my work.</p></div>
+						<div class="about-text"><p>Welcome to my site! I'm a game developer and an artist, and I've been making games since 2020. This site was made so i have a central place to actually showcase my work.</p></div>
 						<div class="about-profile"><img src="profile.jpg" alt="Profile Artwork"></div>
 					</div>
 
 				<h3>I ...</h3>
 				<ul>
 					<li>Make games</li>
-					<li>also enjoy drawing, especially using traditional tools.</li>
+					<li>draw, especially using traditional tools.</li>
 					<li>sometimes do other things like 3d modelling or creatvie writing.</li>
 				</ul>
 			</section>
 
 			<section id="art" aria-label="Art gallery" data-reveal>
 				<h2 class="visually-hidden">Art</h2>
+				<h2>Art</h2>
+				<p>Here's some of my art.</p>
 				<div class="gallery">
-					<a href="art/art1.jpg" target="_blank" rel="noopener" data-reveal><img src="art/art1.jpg" alt="Artwork 1"></a>
-					<a href="art/art2.jpg" target="_blank" rel="noopener" data-reveal><img src="art/art2.jpg" alt="Artwork 2"></a>
-					<a href="art/art3.jpg" target="_blank" rel="noopener" data-reveal><img src="art/art3.jpg" alt="Artwork 3"></a>
-					<a href="art/art4.jpg" target="_blank" rel="noopener" data-reveal><img src="art/art4.jpg" alt="Artwork 4"></a>
-					<a href="art/art5.jpg" target="_blank" rel="noopener" data-reveal><img src="art/art5.jpg" alt="Artwork 5"></a>
-					<a href="art/art6.jpg" target="_blank" rel="noopener" data-reveal><img src="art/art6.jpg" alt="Artwork 6"></a>
-					<a href="art/art7.jpg" target="_blank" rel="noopener" data-reveal><img src="art/art7.jpg" alt="Artwork 7"></a>
-					<a href="art/art8.jpg" target="_blank" rel="noopener" data-reveal><img src="art/art8.jpg" alt="Artwork 8"></a>
-					<a href="art/art9.jpg" target="_blank" rel="noopener" data-reveal><img src="art/art9.jpg" alt="Artwork 9"></a>
-					<a href="art/art10.jpg" target="_blank" rel="noopener" data-reveal><img src="art/art10.jpg" alt="Artwork 10"></a>
-					<a href="art/art11.jpg" target="_blank" rel="noopener" data-reveal><img src="art/art11.jpg" alt="Artwork 11"></a>
-					<a href="art/art12.jpg" target="_blank" rel="noopener" data-reveal><img src="art/art12.jpg" alt="Artwork 12"></a>
-					<a href="art/art13.jpg" target="_blank" rel="noopener" data-reveal><img src="art/art13.jpg" alt="Artwork 13"></a>
-					<a href="art/art14.jpg" target="_blank" rel="noopener" data-reveal><img src="art/art14.jpg" alt="Artwork 14"></a>
+					<button class="gallery-item" data-src="art/art1.jpg" data-reveal><img src="art/art1.jpg" alt="Artwork 1"></button>
+					<button class="gallery-item" data-src="art/art2.jpg" data-reveal><img src="art/art2.jpg" alt="Artwork 2"></button>
+					<button class="gallery-item" data-src="art/art3.jpg" data-reveal><img src="art/art3.jpg" alt="Artwork 3"></button>
+					<button class="gallery-item" data-src="art/art4.jpg" data-reveal><img src="art/art4.jpg" alt="Artwork 4"></button>
+					<button class="gallery-item" data-src="art/art5.jpg" data-reveal><img src="art/art5.jpg" alt="Artwork 5"></button>
+					<button class="gallery-item" data-src="art/art6.jpg" data-reveal><img src="art/art6.jpg" alt="Artwork 6"></button>
+					<button class="gallery-item" data-src="art/art7.jpg" data-reveal><img src="art/art7.jpg" alt="Artwork 7"></button>
+					<button class="gallery-item" data-src="art/art8.jpg" data-reveal><img src="art/art8.jpg" alt="Artwork 8"></button>
+					<button class="gallery-item" data-src="art/art9.jpg" data-reveal><img src="art/art9.jpg" alt="Artwork 9"></button>
+					<button class="gallery-item" data-src="art/art10.jpg" data-reveal><img src="art/art10.jpg" alt="Artwork 10"></button>
+					<button class="gallery-item" data-src="art/art11.jpg" data-reveal><img src="art/art11.jpg" alt="Artwork 11"></button>
+					<button class="gallery-item" data-src="art/art12.jpg" data-reveal><img src="art/art12.jpg" alt="Artwork 12"></button>
+					<button class="gallery-item" data-src="art/art13.jpg" data-reveal><img src="art/art13.jpg" alt="Artwork 13"></button>
+					<button class="gallery-item" data-src="art/art14.jpg" data-reveal><img src="art/art14.jpg" alt="Artwork 14"></button>
 				</div>
 			</section>
+
+			<div id="lightbox" class="lightbox">
+				<button class="lightbox-close">&times;</button>
+				<button class="lightbox-prev">❮</button>
+				<img id="lightbox-img" src="" alt="">
+				<button class="lightbox-next">❯</button>
+				<div class="lightbox-counter"><span id="current-index">1</span> / <span id="total-count">14</span></div>
+			</div>
 
 			<section id="gamedev" data-reveal>
 				<h2>Game Dev</h2>
-				<p>I make games in Unity. I started game development during the COVID-19 pandemic and have been creating ever since. Below is my current project and related development work.</p>
+				<p>I make games in Unity. I started game development during the 2020 pandemic and have been creating ever since. Below is my current project.</p>
 				<div class="gamedev-gallery" style="margin-top: 2rem;">
-					<a href="gamedev/gamedev1.jpg" target="_blank" rel="noopener" data-reveal><img src="gamedev/gamedev1.jpg" alt="Game Dev 1"></a>
-					<a href="gamedev/gamedev2.jpg" target="_blank" rel="noopener" data-reveal><img src="gamedev/gamedev2.jpg" alt="Game Dev 2"></a>
-					<a href="gamedev/gamedev3.jpg" target="_blank" rel="noopener" data-reveal><img src="gamedev/gamedev3.jpg" alt="Game Dev 3"></a>
+					<button class="gallery-item" data-src="gamedev/gamedev1.jpg" data-reveal><img src="gamedev/gamedev1.jpg" alt="GameDev 1"></button>
+					<button class="gallery-item" data-src="gamedev/gamedev2.jpg" data-reveal><img src="gamedev/gamedev2.jpg" alt="GameDev 2"></button>
+					<button class="gallery-item" data-src="gamedev/gamedev3.jpg" data-reveal><img src="gamedev/gamedev3.jpg" alt="GameDev 3"></button>
 				</div>
-			</section>
-
-			<section id="contact" data-reveal>
-				<h2>Contact</h2>
-				<p>Phasellus ut mauris eu orci facilisis gravida. Aliquam erat volutpat. Suspendisse potenti. (Replace with real contact details later.)</p>
 			</section>
 		</main>
 	</div>
-
-	<script>
-		// reveal-on-scroll: add .is-revealed when element enters viewport
-		(function(){
-			const nodes = document.querySelectorAll('[data-reveal]');
-			if(!nodes.length) return;
-			const obs = new IntersectionObserver((entries, o) => {
-				entries.forEach(e => {
-					if (e.isIntersecting) {
-						e.target.classList.add('reveal', 'is-revealed');
-						o.unobserve(e.target);
-					} else {
-						// ensure initial class exists for transition if not yet intersecting
-						e.target.classList.add('reveal');
-					}
-				});
-			}, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
-			nodes.forEach(n => obs.observe(n));
-		})();
-	</script>
 	<script src="script.js"></script>
 </body>
 </html>

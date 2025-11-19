@@ -35,6 +35,12 @@ a {
 	text-decoration: none;
 }
 
+.animated-logo img {
+	width: 1000px;
+	height: auto;
+	image-rendering: pixelated;
+}
+
 /* Gallery Buttons */
 .gallery-item {
 	background: none;

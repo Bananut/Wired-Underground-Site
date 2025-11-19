@@ -33,6 +33,21 @@
 
 		<main class="main" id="main">
 
+			<div class="animated-logo">
+				<img id="logo" src="logo1.png" alt="Logo">
+				
+				<script>
+					const logo = document.getElementById("logo");
+					const images = ["logo1.png", "logo2.png"];
+					let index = 0;
+					
+					setInterval(() => {
+						index = (index + 1) % images.length;
+						logo.src = images[index];
+					}, 600);
+					</script>
+			</div>
+
 			<section id="about" data-reveal>
 				<h2>About</h2>
 

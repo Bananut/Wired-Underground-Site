@@ -15,8 +15,7 @@ html, body {
 
 body {
 	font-family: 'Source Code Pro', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-	color: #000;
-	background: #F6FBFF;
+	color: #0C0C0F;
 }
 
 /* Lists */
@@ -66,7 +65,7 @@ a {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: rgba(0, 0, 0, 0.95);
+	background: #0C0C0F;
 	z-index: 9999;
 	justify-content: center;
 	align-items: center;
@@ -90,7 +89,6 @@ a {
 	right: 20px;
 	background: none;
 	border: none;
-	color: #fff;
 	font-size: 3rem;
 	cursor: pointer;
 	width: 50px;
@@ -141,9 +139,8 @@ a {
 	bottom: 20px;
 	left: 50%;
 	transform: translateX(-50%);
-	color: #fff;
 	font-size: 1rem;
-	background: rgba(0, 0, 0, 0.5);
+	background: #0C0C0F;
 	padding: 8px 16px;
 	border-radius: 4px;
 }
@@ -169,7 +166,7 @@ h1, h2, h3, h4, h5, h6 {
 	min-height: 100vh;
 	display: grid;
 	grid-template-columns: 325px 1fr;
-	background: #fff;
+	background: #f7f8f9;
 }
 
 /* Sidebar */
@@ -183,9 +180,9 @@ h1, h2, h3, h4, h5, h6 {
 	top: 0;
 	height: 100vh;
 	align-self: start;
-	background: #000;
-	color: #fff;
-	border-right: 1px solid #000;
+	background: #0C0C0F;
+	color: #F4F4F0;
+	border-right: 1px solid #0C0C0F;
 }
 
 .brand h1 {
@@ -193,7 +190,7 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 0 0 0.25rem 0;
 	letter-spacing: 0.02em;
 	text-transform: lowercase;
-	color: #fff;
+	color: #F4F4F0;
 }
 
 .brand .tag {
@@ -207,8 +204,8 @@ h1, h2, h3, h4, h5, h6 {
 	list-style: none;
 	display: flex;
 	flex-direction: column;
-	gap: 8px;
-	margin-top: 6px;
+	gap: 12px;
+	margin-top: 14px;
 }
 
 .main-nav li {
@@ -216,7 +213,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .main-nav a {
-	font-size: 1.15rem;
+	font-size: 1.5rem;
 	text-decoration: none;
 	color: #a9a9a9;
 	display: inline-block;
